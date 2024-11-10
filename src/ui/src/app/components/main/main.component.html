@@ -1,14 +1,14 @@
 <div class="d-flex card flex-column mb-3  m-2 p-2">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100" *ngFor="let app of apps">
+        <div class="col" *ngFor="let app of apps">
+            <div class="card h-100" >
                 <img src="/assets/{{app.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{app.name}}</h5>
-                    <p class="card-text">{{app.description}}</p>
+                    <h5 class="card-title d-flex justify-content-center">{{app.name}}</h5>
+                    <p class="card-text d-flex justify-content-center">{{app.description}}</p>
                 </div>
-                <div class="card-footer">
-                    <a [routerLink]="[app.link]"> explore </a>
+                <div class="card-footer d-flex justify-content-center">
+                    <a class="btn btn-primary" [routerLink]="[app.link]"> explore </a>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY requirements.txt .
 RUN apt-get update
-RUN apt-get install -y libgl1 ffmpeg
+RUN apt-get install -y libgl1 ffmpeg flac
 # Install the dependencies listed in the requirements file
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install torch --index-url https://download.pytorch.org/whl/cpu

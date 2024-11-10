@@ -9,6 +9,6 @@
         "name":"Audio Transcribe",
         "description":"Speech to text",
         "link":"/audio-transcribe",
-        "image":"image_detection.jpg"
+        "image":"audio_transcribe.jpg"
     }
 ]

@@ -12,3 +12,5 @@ torchaudio
 ultralytics
 speechrecognition 
 gtts
+pydub
+standard-aifc
