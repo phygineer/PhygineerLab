@@ -1,0 +1,8 @@
+[
+    {
+        "name":"Image Detection",
+        "description":"Detect images with llm",
+        "link":"/image-detection",
+        "image":"image_detection.jpg"
+    }
+]

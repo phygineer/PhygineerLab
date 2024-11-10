@@ -9,11 +9,12 @@
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
+            "cwd": "${workspaceFolder}/src/backend",
             "args": [
-                "src.backend.main:app",
+                "main:app",
                 "--reload",
                 "--host",
-                "0.0.0.0"
+                "0.0.0.0",
             ],
             "jinja": true
         },

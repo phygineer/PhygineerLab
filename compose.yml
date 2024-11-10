@@ -19,7 +19,7 @@ services:
     build: ./src/backend
     container_name: backend
     ports:
-      - "80:8000"
+      - "8000:8000"
 
   ollama:
     image: ollama/ollama:latest

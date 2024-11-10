@@ -1,2 +1,10 @@
 fastapi[standard]
 requests
+uvicorn 
+opencv-python
+pillow
+numpy
+torch
+torchvision
+torchaudio
+ultralytics

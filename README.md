@@ -12,3 +12,8 @@
 - Prerequisties: docker is installed with docker compose.
 - Clone the repo.
 - Run `docker-compose up` to start the containers.
+
+## for apple mlx - torch
+**requirements.txt**
+
+`--pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu`

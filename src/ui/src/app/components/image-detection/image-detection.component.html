@@ -1,0 +1,55 @@
+<div class="flex flex-column mb-3 card m-2 p-2">
+  <div class="p-2">Image Detection</div>
+  <div class="p-2">
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">Select Model</label>
+      <select class="form-select" id="inputGroupSelect01" #modelInput>
+        <option selected>Choose...</option>
+        <option value="llama3.2-vision">llama3.2-vision</option>
+        <option value="llava" selected>llava</option>
+      </select>
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupFile01">Upload Image</label>
+      <input type="file" class="form-control" id="inputGroupFile01" required #imageInput>
+    </div>
+  </div>
+  <div class="p-2">
+    <button class="btn btn-success" (click)="generate_caption()">Generate caption</button>
+  </div>
+  <div class="p-2">
+    <button class="btn btn-success" (click)="detect_objects()">Detect objects</button>
+  </div>
+  <div class="p-2">
+    <p class="d-inline-flex gap-1">
+      <a class="text-info" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+        aria-controls="collapseExample" (click)="fetch_objects()">
+        Note: Only these objects can be detected
+      </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        {{objects}}
+      </div>
+    </div>
+
+  </div>
+  <div class="p-2 text-primary">
+    <div *ngIf="isLoading">
+      Please wait loading...
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div class="p-2 card" *ngIf="captions && !isLoading">
+    <h3 class="text-info">Captions:</h3>
+    <p>{{captions}}</p>
+  </div>
+  <div class="p-2 card" *ngIf="base64DetectedData && !isLoading">
+    <h3 class="text-info">Output:</h3>
+    <img [src]="base64DetectedData" alt="output" style="overflow:scroll; max-width: 600px; max-height: 600px;">
+  </div>
+</div>
