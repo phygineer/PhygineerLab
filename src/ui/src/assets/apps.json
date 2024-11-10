@@ -4,5 +4,11 @@
         "description":"Detect images with llm",
         "link":"/image-detection",
         "image":"image_detection.jpg"
+    },
+    {
+        "name":"Audio Transcribe",
+        "description":"Speech to text",
+        "link":"/audio-transcribe",
+        "image":"image_detection.jpg"
     }
 ]

@@ -3,7 +3,7 @@ from typing import Union
 import time
 
 from fastapi import FastAPI, Request
-from routers import image
+from routers import image,audio
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -23,6 +23,7 @@ app.add_middleware(
 )
 
 app.include_router(image.router,prefix="/api",tags=["image"])
+app.include_router(audio.router,prefix="/api",tags=["audio"])
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
     start_time = time.perf_counter()

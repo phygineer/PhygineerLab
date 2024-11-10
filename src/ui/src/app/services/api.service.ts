@@ -5,33 +5,43 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  host:string="http://localhost:8000/api";
-  constructor(private httpClient:HttpClient) { }
+  host: string = "http://localhost:8000/api";
+  constructor(private httpClient: HttpClient) { }
 
-  convert_img_to_b64(imagePayload:File)
-  {
+  convert_img_to_b64(imagePayload: File) {
     const formData = new FormData();
     formData.append('file', imagePayload, imagePayload.name); // appending the file
-    return this.httpClient.post(`${this.host}/convert-image-to-b64`,formData)
+    return this.httpClient.post(`${this.host}/convert-image-to-b64`, formData)
   }
 
-  convert_b64_to_img(b64image:string)
-  {
-    return this.httpClient.post(`${this.host}/convert-b64-to-image`,{"image":b64image})
+  convert_b64_to_img(b64image: string) {
+    return this.httpClient.post(`${this.host}/convert-b64-to-image`, { "image": b64image })
   }
 
-  detect_image(b64image:string)
-  {
-    return this.httpClient.post(`${this.host}/detect-image`,{"image":b64image})
+  detect_image(b64image: string) {
+    return this.httpClient.post(`${this.host}/detect-image`, { "image": b64image })
   }
 
-  get_detectable_objects()
-  {
+  get_detectable_objects() {
     return this.httpClient.get(`${this.host}/detectable-objects`)
+  }
+
+  onTextToSpeech(formData: FormData) {
+    return this.httpClient.post(
+      `${this.host}/text-to-speech`,
+      formData,
+      { responseType: 'blob' }
+    )
+  }
+  onSpeechToText(formData: FormData) {
+    return this.httpClient.post<{ transcribed_text: string }>(
+      `${this.host}/speech-to-text`,
+      formData
+    )
   }
 
 }
 
-export interface ImageResponse{
-  image:string
+export interface ImageResponse {
+  image: string
 }

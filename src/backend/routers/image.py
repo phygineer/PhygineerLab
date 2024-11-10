@@ -12,7 +12,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-app = FastAPI()
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
