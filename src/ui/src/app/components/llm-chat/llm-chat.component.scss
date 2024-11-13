@@ -1,0 +1,43 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  
+  textarea {
+    resize: none;
+    border-radius: 5px;
+  }
+  
+  input-group button {
+    border-left: none;
+    border-radius: 5px;
+  }
+  
+  input-group textarea:focus {
+    box-shadow: none;
+    border-color: #007bff;
+  }
+  
+  .d-inline-block {
+    max-width: 70%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  .card-body {
+    overflow-y: scroll;
+  }
+  

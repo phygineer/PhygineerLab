@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,14 @@ export class OllamaService {
 
   host="http://localhost:11434"
   constructor(private httpClient:HttpClient) { }
+
+  getResponse(message: string): Observable<any> {
+    return this.httpClient.post(`${this.host}/api/chat`, {  "messages": [
+      {
+        "role": "user",
+        "content": message
+      }], model:"gemma2:27b",stream:false });
+  }
 
   get_models(){
     return this.httpClient.get(`${this.host}/api/tags`)

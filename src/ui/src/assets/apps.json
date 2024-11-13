@@ -1,14 +1,26 @@
 [
     {
         "name":"Image Detection",
-        "description":"Detect images with llm",
+        "description":"Detect objects within image and caption image with llm",
         "link":"/image-detection",
         "image":"image_detection.jpg"
     },
     {
         "name":"Audio Transcribe",
-        "description":"Speech to text",
+        "description":"Speech <-> text",
         "link":"/audio-transcribe",
         "image":"audio_transcribe.jpg"
+    },
+    {
+        "name":"Image Generation",
+        "description":"Generate images with llm",
+        "link":"/image-generator",
+        "image":"image_generator.jpg"
+    },
+    {
+        "name":"LLM Chat",
+        "description":"Chat with LLM",
+        "link":"/llm-chat",
+        "image":"llama_chat.png"
     }
 ]

@@ -38,7 +38,7 @@ services:
           cpus: "4"
           memory: "8G"
 
-  database:
+  mongodb:
     image: mongo:latest
     container_name: database
     restart: always
@@ -55,7 +55,7 @@ services:
     container_name: mongo-express
     restart: always
     depends_on:
-      - database
+      - mongodb
     ports:
       - "8081:8081"
     environment:
@@ -64,4 +64,4 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: changeme
       ME_CONFIG_MONGODB_ADMINUSERNAME: mongoadmin
       ME_CONFIG_MONGODB_ADMINPASSWORD: mongoadmin
-      ME_CONFIG_MONGODB_URL: mongodb://mongoadmin:mongoadmin@database:27017/ 
+      ME_CONFIG_MONGODB_URL: mongodb://mongoadmin:mongoadmin@mongodb:27017/ 
